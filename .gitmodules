@@ -1,0 +1,6 @@
+[submodule "src/github.com/frodenas/bosh-openstack-cpi"]
+	path = src/github.com/frodenas/bosh-openstack-cpi
+	url = https://github.com/frodenas/bosh-openstack-cpi.git
+[submodule "src/github.com/frodenas/bosh-registry"]
+	path = src/github.com/frodenas/bosh-registry
+	url = https://github.com/frodenas/bosh-registry.git

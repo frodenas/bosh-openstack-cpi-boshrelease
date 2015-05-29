@@ -1,0 +1,6 @@
+---
+name: bosh-openstack-cpi
+dependencies:
+  - golang1.4
+files:
+  - github.com/frodenas/bosh-openstack-cpi/**/*

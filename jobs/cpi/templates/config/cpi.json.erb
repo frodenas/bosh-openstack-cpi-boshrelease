@@ -1,0 +1,44 @@
+<%=
+JSON.dump(
+  "openstack" => {
+    "identity_endpoint" => p("openstack.identity_endpoint"),
+    "username" => p("openstack.username"),
+    "user_id" => p("openstack.user_id"),
+    "password" => p("openstack.password"),
+    "api_key" => p("openstack.api_key"),
+    "tenant_name" => p("openstack.tenant_name"),
+    "tenant_id" => p("openstack.tenant_id"),
+    "domain_name" => p("openstack.domain_name"),
+    "domain_id" => p("openstack.domain_id"),
+    "region" => p("openstack.region"),
+    "default_keypair" => p("openstack.default_keypair"),
+    "default_security_groups" => p("openstack.default_security_groups"),
+    "disable_config_drive" => p("openstack.disable_config_drive"),
+    "disable_neutron" => p("openstack.disable_neutron"),
+    "ignore_server_availability_zone" => p("openstack.ignore_server_availability_zone"),
+  },
+  "actions" => {
+    "agent" => {
+      "mbus" => p("agent.mbus"),
+      "ntp"  => p("agent.ntp"),
+      "blobstore" => {
+        "type"    => p("agent.blobstore.provider"),
+        "options" => p("agent.blobstore.options"),
+      },
+    },
+    "registry" => {
+      "protocol" => p("registry.protocol"),
+      "host" => p("registry.host"),
+      "port" => p("registry.port"),
+      "username" => p("registry.username"),
+      "password" => p("registry.password"),
+      "tls" => {
+        "insecure_skip_verify" => p("registry.client.tls.insecure_skip_verify"),
+        "certfile" => "/var/vcap/jobs/cpi/config/registry.certfile",
+        "keyfile" => "/var/vcap/jobs/cpi/config/registry.keyfile",
+        "cacertfile" => "/var/vcap/jobs/cpi/config/registry.cacertfile",
+      }
+    },
+  }
+)
+%>

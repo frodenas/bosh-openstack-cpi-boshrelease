@@ -1,0 +1,6 @@
+---
+name: bosh-registry
+dependencies:
+  - golang1.4
+files:
+  - github.com/frodenas/bosh-registry/**/*

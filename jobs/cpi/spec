@@ -1,0 +1,95 @@
+---
+name: cpi
+
+packages:
+  - bosh-openstack-cpi
+
+templates:
+  bin/cpi.erb: bin/cpi
+  config/cpi.json.erb: config/cpi.json
+  config/registry.cacertfile.erb: config/registry.cacertfile
+  config/registry.certfile.erb: config/registry.certfile
+  config/registry.keyfile.erb: config/registry.keyfile
+
+properties:
+  openstack.identity_endpoint:
+    description: "OpenStack Identify endpoint URI"
+  openstack.username:
+    description: "OpenStack Username"
+    default: ""
+  openstack.user_id:
+    description: "OpenStack User ID"
+    default: ""
+  openstack.password:
+    description: "OpenStack Password"
+    default: ""
+  openstack.api_key:
+    description: "OpenStack API Key"
+    default: ""
+  openstack.tenant_name:
+    description: "OpenStack Tenant Name"
+    default: ""
+  openstack.tenant_id:
+    description: "OpenStack Tenant ID"
+    default: ""
+  openstack.domain_name:
+    description: "OpenStack Domain Name"
+    default: ""
+  openstack.domain_id:
+    description: "OpenStack Domain ID"
+    default: ""
+  openstack.region:
+    description: "OpenStack Region"
+    default: ""
+  openstack.default_keypair:
+    description: "Default OpenStack Key Pair to be used when creating servers"
+    default: ""
+  openstack.default_security_groups:
+    description: "Default OpenStack Security Groups to be used when creating servers"
+    default: []
+  openstack.disable_config_drive:
+    description: "Disable injecting OpenStack user data via the Config Drive"
+    default: false
+  openstack.disable_neutron:
+    description: "Disable OpenStack Neutron interactions"
+    default: false
+  openstack.ignore_server_availability_zone:
+    description: "Ignore OpenStack Server's Availability Zone when creating OpenStack volumes"
+    default: false
+
+  agent.mbus:
+    description: "Mbus URL used by deployed BOSH agents"
+  agent.ntp:
+    description: "NTP configuration used by deployed BOSH agents"
+    default: []
+  agent.blobstore.provider:
+    description: "Provider type for the blobstore used by deployed BOSH agents (e.g. dav, s3)"
+    default: "dav"
+  agent.blobstore.options:
+    description: "Options for the blobstore used by deployed BOSH agents"
+    default: {}
+
+  registry.protocol:
+    description: "Registry Protocol (http|https)"
+    default: "http"
+  registry.host:
+    description: "Registry Hostname"
+  registry.port:
+    description: "Registry Port"
+    default: 25777
+  registry.username:
+    description: "Registry Username"
+    default: "admin"
+  registry.password:
+    description: "Registry Password"
+    default: "admin"
+
+  registry.client.tls.insecure_skip_verify:
+    description: "Skip Registry server's certificate chain and host name verification"
+    default: true
+  registry.client.tls.cert:
+    description: "Registry Client Certificate (PEM format)"
+  registry.client.tls.key:
+    description: "Registry Client Key (PEM format)"
+  registry.client.tls.cacert:
+    description: "Registry Client Root CA certificates (PEM format)"
